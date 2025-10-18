@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PawHope</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a2e0da2c5c.js" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --pawhope-blue: #5BC0EB; /* 🎨 màu xanh bạn chọn */
+            --pawhope-dark: #2A9DF4; /* xanh đậm nhẹ để làm hover */
+        }
+
+        body {
+            background-color: #fafafa;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* 🔹 Navbar */
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 🔹 Logo “PawHope” */
+        .navbar-brand span {
+            font-weight: 800;
+            color: var(--pawhope-blue);
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-brand i {
+            color: var(--pawhope-blue);
+            margin-right: 8px;
+            font-size: 1.4rem;
+        }
+
+        /* 🔹 Liên kết menu */
+        .nav-link {
+            color: #333 !important;
+            font-weight: 600;
+            margin: 0 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+            .nav-link:hover {
+                color: var(--pawhope-blue) !important;
+            }
+
+            .nav-link.active {
+                color: var(--pawhope-dark) !important;
+                font-weight: 700;
+            }
+
+        /* 🔹 Footer */
+        footer {
+            background: #fff;
+            color: #555;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 🐾 Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                <i class="fa-solid fa-paw"></i>
+                <span>🐾PawHope</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="Index">TRANG CHỦ</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="ThuCung" asp-action="Index">NHẬN NUÔI</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="UngHo" asp-action="Index">ỦNG HỘ</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="TinhNguyenVien" asp-action="Index">TÌNH NGUYỆN VIÊN</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="TinTuc" asp-action="Index">TIN TỨC</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="LienHe" asp-action="Index">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Nội dung -->
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 PawHope | <span style="color:var(--pawhope-blue);font-weight:600;">Bringing Hope to Every Paw 🐾</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

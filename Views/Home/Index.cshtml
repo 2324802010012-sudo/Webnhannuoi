@@ -1,0 +1,724 @@
+﻿@model IEnumerable<Webnhannuoi.Models.ThuCung>
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<!-- 🐾 Banner chủ đề PawHope -->
+<div class="banner text-center mb-5">
+    <div class="banner-overlay d-flex flex-column justify-content-center align-items-center text-center">
+        <h1 class="fw-bold mb-3">
+            <i class="fa-solid fa-paw me-2"></i>
+            Nhận nuôi thú cưng ngay
+            <i class="fa-solid fa-paw ms-2"></i>
+        </h1>
+        <p class="lead mb-4">
+            Chúng tôi cứu hộ, chăm sóc và tìm mái ấm cho các bé bị bỏ rơi.
+        </p>
+        <a href="#listThuCung" class="btn btn-lg banner-btn">
+            Xem các bé cần nhận nuôi
+        </a>
+    </div>
+</div>
+<!-- 💙 Giới thiệu về PawHope -->
+<section class="py-5 bg-light rounded-4 shadow-sm mb-5" style="border: 1px solid #eaf7ff;">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- 🖼️ Cột hình ảnh -->
+            <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+                <img src="~/ImagesNhannuoi/AnhTC1.jpg"
+                     alt="PawHope Rescue"
+                     class="img-fluid rounded-4 shadow-sm"
+                     style="max-height:400px; object-fit:cover;">
+            </div>
+
+            <!-- 💬 Cột nội dung -->
+            <div class="col-lg-6 text-center text-lg-start">
+                <h2 class="fw-bold mb-3" style="color:#5BC0EB;">
+                    Về PawHope – Mái ấm của những trái tim nhỏ 🐾
+                </h2>
+
+                <p class="lead" style="color:#555; line-height:1.8;">
+                    PawHope được ra đời với một sứ mệnh giản dị nhưng đầy yêu thương:
+                    <b>mang lại hy vọng và mái ấm mới cho những bé thú cưng bị bỏ rơi.</b><br />
+                    Mỗi ánh mắt buồn, mỗi câu chuyện bị lãng quên – đều xứng đáng có một khởi đầu hạnh phúc.
+                </p>
+
+                <p style="color:#666; font-size:1.05rem; line-height:1.8;">
+                    Tại PawHope, chúng tôi không chỉ cứu hộ mà còn chăm sóc, yêu thương,
+                    và kết nối các bé với những người chủ có trái tim nhân hậu.
+                    <b>Một cái vuốt ve, một cái ôm nhỏ, hay chỉ đơn giản là cơ hội được yêu thương –</b>
+                    chính là điều khiến chúng tôi tiếp tục hành trình này mỗi ngày. 🌿
+                </p>
+
+                <a href="#listThuCung" class="btn btn-lg mt-3"
+                   style="background-color:#5BC0EB; color:white; font-weight:600;
+                          border:none; border-radius:30px; padding:10px 25px;">
+                    Gặp gỡ những bé đang chờ mái ấm 💙
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 🌟 Sứ mệnh & Tầm nhìn -->
+<section class="pawhope-mission py-5 text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- ✨ Nội dung bên trái -->
+            <div class="col-lg-7">
+                <h2 class="fw-bold mb-4 text-center text-lg-start">
+                    <i class="fa-solid fa-heart me-2"></i> Sứ mệnh & Tầm nhìn của PawHope
+                </h2>
+                <p class="lead" style="line-height:1.8;">
+                    Chúng tôi tin rằng mọi sinh vật nhỏ bé đều xứng đáng được yêu thương và trân trọng.
+                    PawHope hướng đến việc <b>xây dựng một cộng đồng nhân ái</b> – nơi con người và thú cưng cùng nhau tạo nên
+                    những câu chuyện hạnh phúc, đầy niềm tin và hy vọng. 🌿
+                </p>
+
+                <div class="row mt-4">
+                    <div class="col-md-4 mb-3">
+                        <div class="mission-box text-center">
+                            <i class="fa-solid fa-hand-holding-heart fa-2x mb-3"></i>
+                            <h6>Giải cứu & Chăm sóc</h6>
+                            <p>Không chỉ cứu hộ mà còn chăm sóc y tế, dinh dưỡng và tình cảm cho từng bé.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="mission-box text-center">
+                            <i class="fa-solid fa-home-heart fa-2x mb-3"></i>
+                            <h6>Kết nối mái ấm</h6>
+                            <p>Từng bé được kết nối với chủ nhân phù hợp, nơi tình thương được sẻ chia mỗi ngày.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="mission-box text-center">
+                            <i class="fa-solid fa-seedling fa-2x mb-3"></i>
+                            <h6>Lan tỏa yêu thương</h6>
+                            <p>Khơi dậy lòng nhân ái trong cộng đồng, để yêu thương được nhân rộng không ngừng.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🖼️ Ảnh minh họa bên phải -->
+            <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                <img src="~/ImagesNhannuoi/Tamnhin.jpg" alt="PawHope Mission"
+                     class="img-fluid rounded-4 shadow-lg"
+                     style="max-height:400px; object-fit:cover;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .pawhope-mission {
+        background: linear-gradient(120deg, #CFEFFD, #A6D9FA);
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .mission-box {
+        background: rgba(255,255,255,0.15);
+        padding: 18px;
+        border-radius: 16px;
+        transition: all 0.3s ease;
+    }
+
+        .mission-box:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-5px);
+        }
+
+        .mission-box h6 {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .mission-box p {
+            font-size: 0.9rem;
+            color: #f0f9ff;
+        }
+</style>
+
+<!-- 🐶 Danh sách thú cưng -->
+<div class="container mt-4" id="listThuCung">
+    <h2 class="text-center mb-4 fw-bold section-title">
+        <i class="fa-solid fa-paw me-2"></i> Các bé đang chờ nhận nuôi
+    </h2>
+
+    <div class="row">
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card shadow-sm border-0 rounded-3 h-100">
+                        <a asp-controller="ThuCung" asp-action="Details" asp-route-id="@item.MaThuCung">
+                            <img src="~/ImagesNhannuoi/@item.Anh"
+                                 alt="@item.TenThuCung"
+                                 class="card-img-top"
+                                 style="height:220px;object-fit:cover;border-radius:8px 8px 0 0;" />
+                        </a>
+
+                        <div class="card-body text-center d-flex flex-column">
+                            <h6 class="fw-bold text-dark mb-1">@item.TenThuCung</h6>
+                            <div class="text-muted small mb-2">
+                                🐾 @item.MaLoaiNavigation?.TenLoai • @item.GioiTinh
+                            </div>
+
+                            <a class="stretched-link d-inline-block mt-auto btn btn-sm w-100"
+                               asp-controller="ThuCung" asp-action="Details" asp-route-id="@item.MaThuCung"
+                               style="background-color:#5BC0EB;color:#fff;border:none;border-radius:10px;">
+                                Xem chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12 text-center text-muted py-5">
+                <i class="fa-solid fa-paw fa-2x mb-3"></i>
+                <p>Hiện chưa có bé nào cần nhận nuôi.</p>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .section-title {
+        color: #5BC0EB;
+        text-transform: uppercase;
+        letter-spacing: .6px;
+    }
+
+    .card .stretched-link:hover {
+        filter: brightness(1.03);
+    }
+</style>
+
+
+<!-- 🎨 CSS tùy chỉnh -->
+<style>
+    /* 🔹 Banner chính */
+    .banner {
+        background: url('/ImagesNhannuoi/Logobanner.png') center/cover no-repeat;
+        border-radius: 16px;
+        min-height: 400px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Lớp phủ trắng mờ để chữ nổi hơn */
+    .banner-overlay {
+        background-color: rgba(255, 255, 255, 0.78);
+        height: 100%;
+        border-radius: 16px;
+        padding: 40px;
+    }
+
+    /* Tiêu đề chính */
+    .banner h1 {
+        font-size: 2.4rem;
+        color: #5BC0EB;
+        letter-spacing: 0.5px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Mô tả ngắn */
+    .banner p {
+        color: #555;
+        font-size: 1.1rem;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    /* Nút hành động */
+    .banner-btn {
+        background-color: #5BC0EB;
+        color: white;
+        font-weight: 600;
+        border: none;
+        border-radius: 30px;
+        padding: 10px 28px;
+        box-shadow: 0 3px 8px rgba(91, 192, 235, 0.4);
+        transition: all 0.3s ease;
+    }
+
+        .banner-btn:hover {
+            background-color: #2A9DF4;
+            transform: translateY(-2px);
+        }
+
+    /* Biểu tượng dấu chân */
+    .banner i {
+        color: #5BC0EB;
+        font-size: 1.2em;
+    }
+
+    /* 🔹 Tiêu đề danh sách thú cưng */
+    .section-title {
+        color: #5BC0EB;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+    }
+
+    /* Nút trong card */
+    .action-btn {
+        border-color: #5BC0EB !important;
+        color: #5BC0EB !important;
+        transition: 0.3s ease;
+    }
+
+        .action-btn:hover {
+            background-color: #5BC0EB;
+            color: white !important;
+        }
+
+    .adopt-btn {
+        background-color: #5BC0EB;
+        color: white;
+        transition: 0.3s ease;
+    }
+
+        .adopt-btn:hover {
+            background-color: #2A9DF4;
+        }
+</style>
+<!-- 🐾 Thống kê PawHope -->
+<section class="pawhope-stats text-center py-5 mb-5">
+    <div class="container">
+        <h2 class="fw-bold mb-5" style="color:#5BC0EB;">
+            Hành trình yêu thương của PawHope 💙
+        </h2>
+
+        <div class="row justify-content-center">
+            <!-- Ca Cứu Hộ -->
+            <div class="col-6 col-md-3 mb-4">
+                <div class="stat-box shadow-sm">
+                    <img src="~/ImagesNhannuoi/AnhTC2.jpg" alt="Ca cứu hộ" class="stat-img" />
+                    <h3 class="fw-bold counter" data-target="2976">0</h3>
+                    <p>Ca Cứu Hộ</p>
+                </div>
+            </div>
+
+            <!-- Đã Có Chủ -->
+            <div class="col-6 col-md-3 mb-4">
+                <div class="stat-box shadow-sm">
+                    <img src="~/ImagesNhannuoi/AnhTC3.jpg" alt="Đã có chủ" class="stat-img" />
+                    <h3 class="fw-bold counter" data-target="1222">0</h3>
+                    <p>Đã Có Chủ</p>
+                </div>
+            </div>
+
+            <!-- Chờ Tìm Chủ -->
+            <div class="col-6 col-md-3 mb-4">
+                <div class="stat-box shadow-sm">
+                    <img src="~/ImagesNhannuoi/AnhTC4.jpg" alt="Chờ tìm chủ" class="stat-img" />
+                    <h3 class="fw-bold counter" data-target="389">0</h3>
+                    <p>Chờ Tìm Chủ</p>
+                </div>
+            </div>
+
+            <!-- Chưa Sẵn Sàng -->
+            <div class="col-6 col-md-3 mb-4">
+                <div class="stat-box shadow-sm">
+                    <img src="~/ImagesNhannuoi/AnhTC5.jpg" alt="Chưa sẵn sàng tìm chủ" class="stat-img" />
+                    <h3 class="fw-bold counter" data-target="212">0</h3>
+                    <p>Chưa Sẵn Sàng Tìm Chủ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 🎨 CSS -->
+<style>
+    .pawhope-stats {
+        background: #EAF8FF;
+        border-radius: 20px;
+    }
+
+    .stat-box {
+        background: white;
+        border-radius: 16px;
+        padding: 25px 10px;
+        transition: 0.3s ease;
+        border: 1px solid #e6f3ff;
+    }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(91,192,235,0.25);
+        }
+
+    .stat-img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        box-shadow: 0 0 12px rgba(91,192,235,0.3);
+    }
+
+    .counter {
+        font-size: 2rem;
+        color: #333;
+    }
+
+    p {
+        color: #555;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    @@media (max-width: 768px) {
+        .stat-img
+
+    {
+        width: 70px;
+        height: 70px;
+    }
+
+    .counter {
+        font-size: 1.6rem;
+    }
+
+    }
+</style>
+
+<!-- 🔢 Hiệu ứng đếm động -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".counter");
+        const speed = 60; // tốc độ
+
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute("data-target");
+                const count = +counter.innerText;
+                const inc = Math.ceil(target / speed);
+
+                if (count < target) {
+                    counter.innerText = count + inc;
+                    setTimeout(updateCount, 30);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+    });
+</script>
+<!-- 🐾 Cảm nhận từ người nhận nuôi -->
+<section class="pawhope-testimonials py-5 text-center">
+    <div class="container">
+        <h2 class="fw-bold mb-5" style="color:#5BC0EB;">Cảm nhận từ những mái ấm mới 🏡</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="testimonial p-4 shadow-sm">
+                    <p>
+                        "Nhờ PawHope, tôi đã tìm thấy Miu – cô mèo nhỏ luôn rúc vào lòng mỗi tối.
+                        Cảm ơn đội ngũ đã mang lại niềm vui này cho tôi!"
+                    </p>
+                    <h6 class="fw-bold mt-3">– Chị Lan, TP. Hồ Chí Minh</h6>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="testimonial p-4 shadow-sm">
+                    <p>
+                        "Lucky đã thay đổi hoàn toàn không khí trong gia đình tôi.
+                        Cậu ấy đáng yêu, ngoan và là món quà tuyệt vời từ PawHope 💙"
+                    </p>
+                    <h6 class="fw-bold mt-3">– Anh Minh, Bình Dương</h6>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="testimonial p-4 shadow-sm">
+                    <p>
+                        "Tôi thật sự xúc động khi thấy sự tận tâm của các bạn.
+                        Các bé được chăm sóc kỹ lưỡng, khỏe mạnh và hạnh phúc."
+                    </p>
+                    <h6 class="fw-bold mt-3">– Cô Hằng, Hà Nội</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .pawhope-testimonials {
+        background: #fafdff;
+        border-radius: 16px;
+    }
+
+    .testimonial {
+        background: white;
+        border-radius: 16px;
+        font-size: 1rem;
+        color: #444;
+        transition: all 0.3s ease;
+    }
+
+        .testimonial:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 18px #5BC0EB(91,192,235,0.25);
+        }
+
+        .testimonial p {
+            font-style: italic;
+        }
+</style>
+
+<!-- 📰 Tin tức PawHope -->
+<section class="pawhope-news py-5 mt-5">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-4" style="color:#5BC0EB;">
+            <i class="fa-solid fa-newspaper me-2"></i> Tin tức & Câu chuyện PawHope
+        </h2>
+        <p class="text-center text-secondary mb-5">
+            Cùng đọc những câu chuyện ấm lòng và hành trình yêu thương của các bé được cứu hộ 💙
+        </p>
+
+        <div class="row">
+            <!-- 🐾 Bài viết 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="~/ImagesNhannuoi/miu.jpg" class="card-img-top" alt="Tin tức 1"
+                         style="height:220px;object-fit:cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold text-dark">Hành trình cứu hộ bé Miu giữa mưa đêm</h5>
+                        <p class="text-muted small flex-grow-1">
+                            Một câu chuyện cảm động về chú mèo nhỏ được đội cứu hộ của PawHope phát hiện và chăm sóc tận tình sau cơn mưa lớn.
+                        </p>
+                        <a href="#" class="btn btn-outline-info mt-2 align-self-start"
+                           style="border-color:#5BC0EB;color:#5BC0EB;">Đọc thêm</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🐾 Bài viết 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="~/ImagesNhannuoi/TT4.jpg" class="card-img-top" alt="Tin tức 2"
+                         style="height:220px;object-fit:cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold text-dark">PawHope tổ chức Ngày Hội Nhận Nuôi 2025</h5>
+                        <p class="text-muted small flex-grow-1">
+                            Hơn 30 bé đã tìm được mái ấm yêu thương trong ngày hội đặc biệt này – một kỷ niệm đáng nhớ cho cả đội tình nguyện viên.
+                        </p>
+                        <a href="#" class="btn btn-outline-info mt-2 align-self-start"
+                           style="border-color:#5BC0EB;color:#5BC0EB;">Đọc thêm</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🐾 Bài viết 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="~/ImagesNhannuoi/TT3.jpg" class="card-img-top" alt="Tin tức 3"
+                         style="height:220px;object-fit:cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold text-dark">Câu chuyện “Lucky” – chú chó được đổi đời</h5>
+                        <p class="text-muted small flex-grow-1">
+                            Từ một chú chó bị bỏ rơi, Lucky giờ đây đã có một ngôi nhà hạnh phúc, một hành trình tràn đầy hy vọng và tình yêu thương.
+                        </p>
+                        <a href="#" class="btn btn-outline-info mt-2 align-self-start"
+                           style="border-color:#5BC0EB;color:#5BC0EB;">Đọc thêm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 🌈 CSS tùy chỉnh -->
+<style>
+    .pawhope-news {
+        background: linear-gradient(180deg, #fafdff 0%, #eaf8ff 100%);
+        border-radius: 16px;
+    }
+
+        .pawhope-news .card {
+            transition: all 0.3s ease;
+            border-radius: 16px;
+        }
+
+            .pawhope-news .card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 8px 20px rgba(91, 192, 235, 0.3);
+            }
+
+        .pawhope-news .card-body h5 {
+            color: #333;
+        }
+
+        .pawhope-news .btn:hover {
+            background-color: #5BC0EB;
+            color: white !important;
+        }
+</style>
+<!-- 💫 Kêu gọi hành động -->
+<section class="pawhope-join text-center text-white py-5 mt-5">
+    <div class="container">
+        <h2 class="fw-bold mb-3">Cùng PawHope lan tỏa yêu thương 💞</h2>
+        <p class="lead mb-4">
+            Bạn có thể đóng góp bằng nhiều cách – nhận nuôi, tài trợ, tình nguyện hoặc đơn giản là chia sẻ câu chuyện của chúng tôi.
+        </p>
+        <a href="/Home/Support" class="btn btn-light fw-semibold px-4 py-2 rounded-pill">
+            Ủng hộ ngay
+        </a>
+    </div>
+</section>
+
+<style>
+    .pawhope-join {
+        background: linear-gradient(120deg, #CFEFFD, #A6D9FA);
+        border-radius: 20px;
+        box-shadow: 0 -4px 20px rgba(91,192,235,0.15);
+    }
+
+        .pawhope-join .btn:hover {
+            background-color: #fff;
+            color: #5BC0EB !important;
+            transform: scale(1.05);
+        }
+</style>
+<footer class="footer-pawhope text-dark mt-5">
+    <div class="container py-5">
+        <div class="row g-4 align-items-start justify-content-between">
+
+            <!-- 🐾 Logo & Giới thiệu -->
+            <div class="col-lg-4 col-md-6">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="~/ImagesNhannuoi/Logobanner.png" alt="PawHope Logo"
+                         style="width:55px;height:55px;border-radius:50%;margin-right:12px;">
+                    <h4 class="fw-bold mb-0" style="color:#0077b6;">PawHope</h4>
+                </div>
+                <p class="footer-desc mb-0">
+                    PawHope mang đến <strong>hy vọng</strong> và <strong>mái ấm</strong> cho những bé bị bỏ rơi 🐶💙 <br>
+                    Mỗi bé đều xứng đáng được yêu thương và chăm sóc bằng cả trái tim. 🌿
+                </p>
+            </div>
+
+            <!-- 🔗 Liên kết nhanh -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="fw-semibold mb-3" style="color:#0077b6;">Liên kết nhanh</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="/">🏠 Trang chủ</a></li>
+                    <li><a href="/Home/Index#listThuCung">🐾 Nhận nuôi</a></li>
+                    <li><a href="/Home/Support">💗 Ủng hộ</a></li>
+                    <li><a href="/Home/Contact">📞 Liên hệ</a></li>
+                </ul>
+            </div>
+
+            <!-- 🌐 Mạng xã hội -->
+            <div class="col-lg-4 col-md-12 text-center text-lg-end">
+                <h5 class="fw-semibold mb-3" style="color:#0077b6;">Kết nối với PawHope</h5>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><img src="~/ImagesNhannuoi/face.jpg" alt="Facebook" /></a>
+                    <a href="#" class="social-icon"><img src="~/ImagesNhannuoi/zalo.png" alt="Zalo" /></a>
+                    <a href="#" class="social-icon"><img src="~/ImagesNhannuoi/tiktok.jpg" alt="TikTok" /></a>
+                    <a href="mailto:pawhope@gmail.com" class="social-icon"><img src="~/ImagesNhannuoi/Mail.jpg" alt="Email" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom text-center py-3">
+        <small>© 2025 <strong>PawHope</strong> | Bringing Hope to Every Paw 🐾</small>
+    </div>
+</footer>
+
+<style>
+    /* 💙 Footer nền pastel dịu */
+    .footer-pawhope {
+        background: linear-gradient(120deg, #CFEFFD, #A6D9FA);
+        border-top-left-radius: 28px;
+        border-top-right-radius: 28px;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+        position: relative;
+    }
+
+    /* 🌿 Giới thiệu */
+    .footer-desc {
+        color: #333;
+        font-size: 0.96rem;
+        line-height: 1.7;
+    }
+
+    /* 🔗 Liên kết nhanh */
+    .footer-links li {
+        margin: 8px 0;
+    }
+
+    .footer-links a {
+        color: #0066aa;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+        font-weight: 500;
+    }
+
+        .footer-links a:hover {
+            color: #003d66;
+            text-decoration: underline;
+        }
+
+    /* 🌐 Mạng xã hội */
+    .footer-social {
+        display: flex;
+        justify-content: flex-end;
+        gap: 14px;
+    }
+
+    .social-icon {
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+    }
+
+        .social-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+            .social-icon:hover img {
+                transform: scale(1.1);
+            }
+
+    /* 🌙 Bản quyền */
+    .footer-bottom {
+        background: rgba(255,255,255,0.35);
+        color: #004466;
+        font-weight: 500;
+        border-top: 1px solid rgba(255,255,255,0.4);
+    }
+
+    /* 📱 Responsive */
+    @@media (max-width: 768px) {
+        .footer-pawhope
+
+    {
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    }
+</style>
